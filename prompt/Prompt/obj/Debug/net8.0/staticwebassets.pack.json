@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Prompt.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Prompt.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Prompt.props",
+      "PackagePath": "build\\Prompt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Prompt.props",
+      "PackagePath": "buildMultiTargeting\\Prompt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Prompt.props",
+      "PackagePath": "buildTransitive\\Prompt.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

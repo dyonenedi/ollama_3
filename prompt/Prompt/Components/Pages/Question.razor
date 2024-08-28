@@ -1,0 +1,56 @@
+﻿@page "/Question"
+@page "/"
+
+<section class="hero is-link">
+    <div class="hero-body">
+        <p class="title">Ideris AI</p>
+        <p class="subtitle">Tire suas dúvidas</p>
+    </div>
+</section>
+
+<div class="container is-max-tablet mt-4">
+    <div class="columns">
+        <div class="column is-full">
+            <small><i>Digite sua dúvida:</i></small>
+            <EditForm Enhance Model="prompt" OnSubmit="SendQuestionLlama" FormName="prompt">
+                <div class="field mt-2">
+                    <div class="control is-large @(loadingAnswer?"is-loading":"")">
+                         <InputText id="prompt" @onkeyup="@showModel" @bind-Value="prompt.Text" class="textarea is-info" placeholder="Digite sua pergunta aqui..." autocomplete="off" />
+                    </div>
+                </div>
+                @if (loadingAnswer)
+                {
+                    <progress class="progress is-small is-info" max="100">15%</progress>
+                }
+
+                <div class="control">
+                    <button class="button is-link is-small" type="submit">Enviar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-full">
+            @if (responses.Count == 0)
+            {
+                <article class="message">
+                    <div class="message-body">
+                        Não há respostas para mostrar aqui.
+                    </div>
+                </article>
+            }
+            else
+            {
+                @foreach (string response in responses)
+                {
+                    <article class="message">
+                        <div class="message-body">
+                            @response
+                        </div>
+                    </article>
+                }
+            }
+        </div>
+    </div>
+</div>

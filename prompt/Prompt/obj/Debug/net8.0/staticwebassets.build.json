@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "pEHhZlPaumf6RKytYqd4FfIqWpnSiEzC+HgfPPMo8so=",
+  "Source": "Prompt",
+  "BasePath": "_content/Prompt",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Prompt\\wwwroot",
+      "Source": "Prompt",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\",
+      "BasePath": "_content/Prompt",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css",
+      "SourceId": "Prompt",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Prompt",
+      "RelativePath": "Prompt.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
+      "SourceId": "Prompt",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Prompt",
+      "RelativePath": "Prompt.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\app.css",
+      "SourceId": "Prompt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\",
+      "BasePath": "_content/Prompt",
+      "RelativePath": "app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    }
+  ]
+}
