@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "83czGGRbO/6qCa6XY9IVuWAaQ5wzECyIQeWrsJMEwso/NKj+WX6SFpzDM5JbbKHA0tIg9xX/XlqKaW8MOgDVnQ==",
+  "dgSpecHash": "dHE/JxFhtgI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\api\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dyon.souza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\dyon.souza\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

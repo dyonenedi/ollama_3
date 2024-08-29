@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pEHhZlPaumf6RKytYqd4FfIqWpnSiEzC+HgfPPMo8so=",
+  "Hash": "H+8cfjpbFP3nC5kx8QIeVeZHx89urxhmX/aZZSVs0fg=",
   "Source": "Prompt",
   "BasePath": "_content/Prompt",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Prompt\\wwwroot",
       "Source": "Prompt",
-      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\",
       "BasePath": "_content/Prompt",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css",
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css",
       "SourceId": "Prompt",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Prompt",
       "RelativePath": "Prompt.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css"
+      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Prompt.styles.css"
     },
     {
-      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
       "SourceId": "Prompt",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Prompt",
       "RelativePath": "Prompt.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\app.css",
       "SourceId": "Prompt",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\",
       "BasePath": "_content/Prompt",
       "RelativePath": "app.css",
       "AssetKind": "All",

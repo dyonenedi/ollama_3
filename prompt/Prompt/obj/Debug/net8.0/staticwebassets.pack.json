@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
+      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
       "PackagePath": "staticwebassets\\Prompt.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\wwwroot\\app.css",
+      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {

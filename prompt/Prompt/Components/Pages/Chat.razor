@@ -1,0 +1,6 @@
+﻿@page "/chat"
+@rendermode InteractiveServer
+
+<InputTextArea @bind-Value="chat"></InputTextArea>
+<button class="button is-link is-small" type="submit" @onclick="() => onSubmit()">Enviar</button>
+

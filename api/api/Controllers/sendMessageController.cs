@@ -6,13 +6,13 @@ using System.Text.Json;
 namespace Llhama3_test.Controllers
 {
     [ApiController]
-    [Route("api/v1/iderisAI")]
-    public class iderisAiController : ControllerBase
+    [Route("api/v1/sendMessage")]
+    public class sendMessageController : ControllerBase
     {
         private string answer = "";
         private readonly HttpClient _httpClient;
 
-        public iderisAiController()
+        public sendMessageController()
         {
             _httpClient = new HttpClient();
         }
@@ -24,10 +24,15 @@ namespace Llhama3_test.Controllers
 
             return answer;
         }
-        private async Task getLlamaResponse(string prompt, string model = "llama3.1", bool stream = false)
+        private async Task getLlamaResponse(string prompt, string model = "llama3", bool stream = false)
         {
             // Monta a request
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:11434/api/generate");
+            string protocol = "http://";
+            string domain = "localhost";
+            string port = ":11434";
+            string uri = "/api/generate";
+            string url = (protocol + domain + port + uri);
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
             // Monta o content do Post
             var content = new StringContent(JsonSerializer.Serialize(new
             {

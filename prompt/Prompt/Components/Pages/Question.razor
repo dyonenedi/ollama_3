@@ -1,6 +1,8 @@
 ﻿@page "/Question"
 @page "/"
 
+@rendermode InteractiveServer
+
 <section class="hero is-link">
     <div class="hero-body">
         <p class="title">Ideris AI</p>
@@ -15,7 +17,7 @@
             <EditForm Enhance Model="prompt" OnSubmit="SendQuestionLlama" FormName="prompt">
                 <div class="field mt-2">
                     <div class="control is-large @(loadingAnswer?"is-loading":"")">
-                         <InputText id="prompt" @onkeyup="@showModel" @bind-Value="prompt.Text" class="textarea is-info" placeholder="Digite sua pergunta aqui..." autocomplete="off" />
+                        <InputTextArea id="prompt" @onkeyup="validateEnter" @bind-Value="prompt.Text" class="textarea is-info" placeholder="Digite sua pergunta aqui..." autocomplete="off" />
                     </div>
                 </div>
                 @if (loadingAnswer)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fgk4oqIgkwFSBRUNAWBfTMpmY9sIYnqqxSNNuc/7FwyFEexkZkD/ntpG/GWUcuMrFxDM9GS6+BhI+po5ZTnmqQ==",
+  "dgSpecHash": "8qoyLyL+Zh0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dyon.souza\\source\\repos\\Llama_3\\Prompt\\Prompt\\Prompt.csproj",
+  "projectFilePath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
