@@ -26,7 +26,7 @@ namespace Llhama3_test.Controllers
         }
         private async Task getLlamaResponse(string prompt, string model = "llama3", bool stream = false)
         {
-            // Monta a request
+            // Assemble Request
             string protocol = "http://";
             string domain = "localhost";
             string port = ":11434";
@@ -34,7 +34,7 @@ namespace Llhama3_test.Controllers
             string url = (protocol + domain + port + uri);
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
-            // Monta o content do Post
+            // Assemble Post
             var content = new StringContent(JsonSerializer.Serialize(new
             {
                 prompt,
@@ -42,23 +42,22 @@ namespace Llhama3_test.Controllers
                 stream
             }), Encoding.UTF8, "application/json");
 
-            // Associa o conteúdo a requisição
+            // Link request and content
             request.Content = content;
 
-            // Faz a chamada no endpoint e valida se deu sucesso
+            // Validate end-point sync
             var response = await _httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
 
-            // Extrai o conteúdo da resposta em forma Json
+            // Extract body 
             var responseBody = await response.Content.ReadAsStringAsync();
-            // Extrai o Json em formato de Objeto
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
             var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
 
-            // Acessar a propriedade "response" e converter para string
+            // Access string response to give back
             answer = responseObject.response;
         }
 

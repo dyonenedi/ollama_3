@@ -14,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sendMessageController.cs",
+              "DocumentMoniker": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\sendMessageController.cs",
+              "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
+              "RelativeToolTip": "api\\Controllers\\sendMessageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T21:45:04.044Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -75,23 +88,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sendMessageController.cs",
-              "DocumentMoniker": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\sendMessageController.cs",
-              "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
-              "RelativeToolTip": "api\\Controllers\\sendMessageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T15:43:24.466Z",
-              "EditorCaption": ""
             }
           ]
         }
