@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB708D47-E91D-4625-9D27-A008A7F9951B}|Prompt\\Prompt.csproj|c:\\users\\dyon.souza\\source\\repos\\lhama_3.1_chatboot\\prompt\\prompt\\components\\pages\\question.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB708D47-E91D-4625-9D27-A008A7F9951B}|Prompt\\Prompt.csproj|solutionrelative:prompt\\components\\pages\\question.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB708D47-E91D-4625-9D27-A008A7F9951B}|Prompt\\Prompt.csproj|c:\\users\\dyon.souza\\source\\repos\\lhama_3.1_chatboot\\prompt\\prompt\\components\\pages\\question.razor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CB708D47-E91D-4625-9D27-A008A7F9951B}|Prompt\\Prompt.csproj|solutionrelative:prompt\\components\\pages\\question.razor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 16,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Question.razor.js",
+              "DocumentMoniker": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
+              "RelativeDocumentMoniker": "Prompt\\Components\\Pages\\Question.razor.js",
+              "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
+              "RelativeToolTip": "Prompt\\Components\\Pages\\Question.razor.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-29T18:50:17.446Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +105,7 @@
               "RelativeDocumentMoniker": "Prompt\\Components\\Pages\\Question.razor.cs",
               "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.cs",
               "RelativeToolTip": "Prompt\\Components\\Pages\\Question.razor.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T20:31:22.553Z",
               "EditorCaption": ""
@@ -41,9 +118,10 @@
               "RelativeDocumentMoniker": "Prompt\\Components\\Pages\\Question.razor",
               "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor",
               "RelativeToolTip": "Prompt\\Components\\Pages\\Question.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T20:31:22.559Z"
+              "WhenOpened": "2024-08-28T20:31:22.559Z",
+              "EditorCaption": ""
             }
           ]
         }

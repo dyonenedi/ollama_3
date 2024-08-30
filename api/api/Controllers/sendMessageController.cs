@@ -33,6 +33,7 @@ namespace Llhama3_test.Controllers
             string uri = "/api/generate";
             string url = (protocol + domain + port + uri);
             var request = new HttpRequestMessage(HttpMethod.Post, url);
+
             // Monta o content do Post
             var content = new StringContent(JsonSerializer.Serialize(new
             {
@@ -56,18 +57,19 @@ namespace Llhama3_test.Controllers
                 PropertyNameCaseInsensitive = true
             };
             var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
+
             // Acessar a propriedade "response" e converter para string
-            answer = responseObject.Response;
+            answer = responseObject.response;
         }
 
         public class OllamaResponse
         {
-            public string Model { get; set; }
-            public DateTime CreatedAt { get; set; }
-            public string Response { get; set; }
-            public bool Done { get; set; }
-            public string DoneReason { get; set; }
-            public int[] Context { get; set; }
+            public string model { get; set; }
+            public DateTime createdAt { get; set; }
+            public string response { get; set; }
+            public bool done { get; set; }
+            public string doneReason { get; set; }
+            public int[] context { get; set; }
         }
     }
 }

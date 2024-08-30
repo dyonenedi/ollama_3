@@ -1,0 +1,11 @@
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\api.exe
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\api.dll
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\api.deps.json
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\api.runtimeconfig.json
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\api.pdb
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\dyon.souza\source\repos\Lhama_3.1_chatboot\api\api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

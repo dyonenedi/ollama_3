@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E866D37B-E035-4928-8EE6-55AB2F92CE78}|api\\api.csproj|c:\\users\\dyon.souza\\source\\repos\\lhama_3.1_chatboot\\api\\api\\controllers\\sendmessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E866D37B-E035-4928-8EE6-55AB2F92CE78}|api\\api.csproj|solutionrelative:api\\controllers\\sendmessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,23 +70,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sendMessageController.cs",
-              "DocumentMoniker": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\sendMessageController.cs",
-              "ToolTip": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\Controllers\\sendMessageController.cs",
-              "RelativeToolTip": "api\\Controllers\\sendMessageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T14:42:49.46Z",
-              "EditorCaption": ""
             }
           ]
         }

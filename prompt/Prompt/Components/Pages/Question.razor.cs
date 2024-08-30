@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.JSInterop;
-using System.IO;
+using System.Diagnostics;
+using System.Drawing;
 using System.Net.Http;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 
@@ -13,116 +11,177 @@ namespace Prompt.Components.Pages
 {
     public partial class Question : ComponentBase
     {
-        [Inject] private IJSRuntime jsRuntime { get; set; }
-        private Prompt prompt = new Prompt();
-        private HttpClient _httpClient = new HttpClient();
-        private List<String> responses = new List<string>();
+        [Inject] private IJSRuntime JSRuntime { get; set; }
+        private IJSObjectReference questionModule;
+        private Prompt Prompt = new Prompt();
+        private HttpClient client;
+        private HttpRequestMessage request;
+        private List<object> responses = new List<object>();
+        Stopwatch stopwatch = new Stopwatch();
+        private string answer = "";
         private bool loadingAnswer = false;
+        private bool formDisabled = false;
+
         protected override async Task OnInitializedAsync()
         {
-            prompt.Text = "";
+            Prompt.text = "";
         }
 
-        public void validateEnter(KeyboardEventArgs args)
+        [JSInvokable]
+        public void callSendQuestion(string question)
         {
-            if (args.Key == "Enter")
-            {
-                SendQuestionLlama().GetAwaiter();
-            }
+            sendQuestion(question).GetAwaiter();
         }
-        public async Task SendQuestionLlama()
+        private async Task sendQuestion(string _prompt = null)
         {
             try {
-                //await jsRuntime.InvokeVoidAsync("console.log", "Chamando Llama Api");
-                loadingAnswer = true;
-                StateHasChanged();
-                var _prompt = prompt.Text;
-                var model = "llama3.1";
-                var stream = false;
-                // Monta a request
-                var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:11434/api/generate");
-                // Monta o content do Post
-                var content = new StringContent(JsonSerializer.Serialize(new
-                {
-                    _prompt,
-                    model,
-                    stream
-                }), Encoding.UTF8, "application/json");
+                var prompt = (_prompt != null) ? _prompt : Prompt.text;
+                Prompt.text = prompt;
+                await setLoadingState();
 
+                bool getLocal = true;
+                await getLlamaResponse(getLocal, prompt);
 
-                // Associa o conteúdo a requisição
-                request.Content = content;
+                await setLoadingState(false);
 
-                // Faz a chamada no endpoint e valida se deu sucesso
-                var response = await _httpClient.SendAsync(request);
-                response.EnsureSuccessStatusCode();
-
-                //await Task.Delay(2000);
-                //goto FIM;
-
-                // Extrai o conteúdo da resposta em forma Json
-                var responseBody = await response.Content.ReadAsStringAsync();
-                // Extrai o Json em formato de Objeto
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
-                var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
+                decimal time = Math.Round((decimal)(stopwatch.ElapsedMilliseconds / 1000), 0);
+                object response = new { index = responses.Count(), question = prompt, answer = answer, time = time };
                 
-                // Acessar a propriedade "response" e converter para string
-                var _response = responseObject.Response;
-                responses.Add(_response);
-
-                //FIM:
-                prompt.Text = "";
-                loadingAnswer = false;
+                await appendInResponses(response);
+                StateHasChanged();
             }
             catch (Exception ex)
             {
-                responses.Add("Um erro ocorreu: "+ex.Message);
+                await setLoadingState(false);
+                await JSRuntime.InvokeVoidAsync("console.log", "Um erro ocorreu: "+ex.Message);
+            }
+        }
+        private async Task getLlamaResponse(bool getLocal, string prompt, string model = "llama3", bool stream = false)
+        {
+            try
+            {
+                if (prompt != "")
+                {
+                    // Assemble request
+                    string protocol = "http://";
+                    string domain = "localhost";
+                    string port = getLocal ? ":11434" : ":44358";
+                    string uri = getLocal ? "/api/generate" : $"/api/v1/sendMessage?prompt={prompt}";
+                    string url = protocol + domain + port + uri;
+                    request = new HttpRequestMessage(getLocal ? HttpMethod.Post : HttpMethod.Get, url);
+
+                    if (getLocal)
+                    {
+                        // Assemble content
+                        var json = JsonSerializer.Serialize(new{prompt,model,stream});
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        // Associates the content with the request
+                        request.Content = content;
+                    }
+
+                    // Set a timeout to request
+                    client = new HttpClient();
+                    client.Timeout = TimeSpan.FromSeconds(30);
+
+                    // Make the call to the endpoint and validate if it was successful
+                    var response = await client.SendAsync(request);
+                    response.EnsureSuccessStatusCode();
+
+                    // Extract the response content in Json format
+                    var responseBody = await response.Content.ReadAsStringAsync();
+
+                    if(getLocal)
+                    {
+                        // Extract Json in Object format
+                        var options = new JsonSerializerOptions
+                        {
+                            PropertyNameCaseInsensitive = true
+                        };
+                        var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
+                        answer = responseObject.response;
+                    } 
+                    else
+                    {
+                        // Access the "response" property and convert it to a string
+                        answer = JsonSerializer.Deserialize<String>(responseBody);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                setLoadingState(false);
+                await JSRuntime.InvokeVoidAsync("console.log", e.Message);
             }
         }
 
-        protected async Task sendQuestionAPI()
+        private async Task setLoadingState(bool loading = true)
         {
-            responses.Add("Olá Dyon, como vai?");
-            // Monta a request
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5139/api/v1/IderisAI");
-            // Monta o content do Post
-            var content = new StringContent(JsonSerializer.Serialize(new{prompt.Text}), Encoding.UTF8, "application/json");
+            if (loading)
+            {
+                stopwatch.Reset();
+                stopwatch.Start();
 
-            // Associa o conteúdo a requisição
-            request.Content = content;
+                formDisabled = true;
+                loadingAnswer = true;
+                
+                StateHasChanged();
+            } else
+            {
+                stopwatch.Stop();
 
-            // Faz a chamada no endpoint e valida se deu sucesso
-            var response = await _httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-
-            // Extrai o conteúdo da resposta em forma Json
-            var responseBody = await response.Content.ReadAsStringAsync();
-
-            // Extrai 
-            var _response = JsonSerializer.Deserialize<String>(responseBody);
-            responses.Add(_response);
+                Prompt.text = "";
+                formDisabled = false;
+                loadingAnswer = false;
+                StateHasChanged();
+            }
         }
-
+        private async Task appendInResponses(object response)
+        {
+            responses.Add(response);
+            if (responses.Count() > 1)
+            {
+                for (var i = (responses.Count() - 1); i >= 0; i--)
+                {
+                    if (i == 0)
+                    {
+                        responses[0] = response;
+                    } else
+                    {
+                        responses[i] = responses[i-1];
+                    }
+                }
+                
+            }
+        }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            //await jsRuntime.InvokeVoidAsync("console.log", "Prompt: " + prompt.Text);
+            try
+            {
+                if (firstRender)
+                {
+                    var thisContext = DotNetObjectReference.Create(this);
+                    questionModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Question.razor.js");
+                    await questionModule.InvokeVoidAsync("setFormEnterSubmit", thisContext);
+                }
+            } catch(Exception e){
+                await JSRuntime.InvokeVoidAsync("console.log", e.Message);
+            }
         }
     }
 
     public class Prompt
     {
-        public string? Text { get; set; }
+        public string? text { get; set; } = "";
     }
     public class OllamaResponse
     {
-        public string Model { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string Response { get; set; }
-        public bool Done { get; set; }
-        public string DoneReason { get; set; }
-        public int[] Context { get; set; }
+        public string? model { get; set; }
+        public DateTime createdAt { get; set; }
+        public string response { get; set; }
+        public bool done { get; set; }
+        public string doneReason { get; set; }
+        public string done_Reason { get; set; }
+        public int[]? context { get; set; }
     }
 }

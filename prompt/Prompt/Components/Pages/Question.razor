@@ -1,23 +1,22 @@
-﻿@page "/Question"
-@page "/"
+﻿@page "/"
 
 @rendermode InteractiveServer
 
 <section class="hero is-link">
     <div class="hero-body">
-        <p class="title">Ideris AI</p>
-        <p class="subtitle">Tire suas dúvidas</p>
+        <p class="title">Chat AI</p>
+        <p class="subtitle">Ask your question</p>
     </div>
 </section>
 
 <div class="container is-max-tablet mt-4">
-    <div class="columns">
+    <div class="columns mb-0">
         <div class="column is-full">
-            <small><i>Digite sua dúvida:</i></small>
-            <EditForm Enhance Model="prompt" OnSubmit="SendQuestionLlama" FormName="prompt">
+            <small><i>Place your question:</i></small>
+            <EditForm id="promptForm" Enhance Model="Prompt" OnSubmit="() => sendQuestion()" FormName="prompt">
                 <div class="field mt-2">
                     <div class="control is-large @(loadingAnswer?"is-loading":"")">
-                        <InputTextArea id="prompt" @onkeyup="validateEnter" @bind-Value="prompt.Text" class="textarea is-info" placeholder="Digite sua pergunta aqui..." autocomplete="off" />
+                        <InputTextArea id="prompt" @bind-Value="Prompt.text" class="textarea is-info" autofocus="autofocus" disabled="@formDisabled" placeholder="Plase some question here..." autocomplete="off" />
                     </div>
                 </div>
                 @if (loadingAnswer)
@@ -26,31 +25,26 @@
                 }
 
                 <div class="control">
-                    <button class="button is-link is-small" type="submit">Enviar</button>
+                    <button class="button is-link is-small" id="btn" type="submit">Send</button>
                 </div>
             </EditForm>
         </div>
     </div>
-
     <div class="columns">
         <div class="column is-full">
-            @if (responses.Count == 0)
+            @if (responses.Count > 0)
             {
-                <article class="message">
-                    <div class="message-body">
-                        Não há respostas para mostrar aqui.
-                    </div>
-                </article>
-            }
-            else
-            {
-                @foreach (string response in responses)
+                <hr />
+                @foreach (dynamic response in responses)
                 {
-                    <article class="message">
+                    <article class="message mt-5 mb-0">
                         <div class="message-body">
-                            @response
+                            You: <span class="has-text-white">@response.question</span>
+                            <br>
+                            &nbsp;A.I.: <span class="has-text-primary">@response.answer</span>
                         </div>
                     </article>
+                    <code class="has-text-grey">Time to reply: <span class="has-text-danger">@($"{response.time}")s</span></code>
                 }
             }
         </div>

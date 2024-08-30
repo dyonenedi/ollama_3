@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
+      "PackagePath": "staticwebassets\\Components\\Pages\\Question.razor.js"
+    },
+    {
       "Id": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Prompt.bundle.scp.css",
       "PackagePath": "staticwebassets\\Prompt.bundle.scp.css"
     },
