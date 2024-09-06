@@ -109,12 +109,13 @@ namespace Prompt.Components.Pages
                         }
                     } else
                     {
-                        answer = "Sorry, there is some problem in my mind. Let's tray again.";
+                        answer = "Sorry, there is some problem in my mind. Lat's tray again.";
                     }
                 }
             }
             catch (Exception e)
             {
+                answer = "Sorry, there is some leg in my mind. Let's tray again.";
                 setLoadingState(false);
             }
         }
