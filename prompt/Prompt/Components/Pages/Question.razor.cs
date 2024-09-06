@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.JSInterop;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -86,32 +87,35 @@ namespace Prompt.Components.Pages
 
                     // Make the call to the endpoint and validate if it was successful
                     var response = await client.SendAsync(request);
-                    response.EnsureSuccessStatusCode();
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    { 
+                        // Extract the response content in Json format
+                        var responseBody = await response.Content.ReadAsStringAsync();
 
-                    // Extract the response content in Json format
-                    var responseBody = await response.Content.ReadAsStringAsync();
-
-                    if(getLocal)
-                    {
-                        // Extract Json in Object format
-                        var options = new JsonSerializerOptions
+                        if(getLocal)
                         {
-                            PropertyNameCaseInsensitive = true
-                        };
-                        var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
-                        answer = responseObject.response;
-                    } 
-                    else
+                            // Extract Json in Object format
+                            var options = new JsonSerializerOptions
+                            {
+                                PropertyNameCaseInsensitive = true
+                            };
+                            var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
+                            answer = responseObject.response;
+                        } 
+                        else
+                        {
+                            // Access the "response" property and convert it to a string
+                            answer = JsonSerializer.Deserialize<String>(responseBody);
+                        }
+                    } else
                     {
-                        // Access the "response" property and convert it to a string
-                        answer = JsonSerializer.Deserialize<String>(responseBody);
+                        answer = "Sorry, there is some problem in my mind. Let's tray again.";
                     }
                 }
             }
             catch (Exception e)
             {
                 setLoadingState(false);
-                await JSRuntime.InvokeVoidAsync("console.log", e.Message);
             }
         }
 
