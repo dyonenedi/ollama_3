@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.JSInterop;
+using System;
+using System.Web;
 using System.Diagnostics;
-using System.Drawing;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
+using Prompt.Components.Class;
 
 namespace Prompt.Components.Pages
 {
@@ -15,13 +13,15 @@ namespace Prompt.Components.Pages
         [Inject] private IJSRuntime JSRuntime { get; set; }
         private IJSObjectReference questionModule;
         private Prompt Prompt = new Prompt();
-        private HttpClient client;
-        private HttpRequestMessage request;
+        private Ollama Ollama;
+        private OllamaApi OllamaApi;
+
         private List<object> responses = new List<object>();
         Stopwatch stopwatch = new Stopwatch();
         private string answer = "";
         private bool loadingAnswer = false;
         private bool formDisabled = false;
+        public bool getFromLocalOllama = true; // CHANGE THIS VAR TO GET FROM AN API DESTINATION 
 
         protected override async Task OnInitializedAsync()
         {
@@ -37,89 +37,51 @@ namespace Prompt.Components.Pages
         {
             try {
                 var prompt = (_prompt != null) ? _prompt : Prompt.text;
-                Prompt.text = prompt;
-                await setLoadingState();
+                if (prompt != null && prompt != "") {
+                    // Preparing loading state
+                    Prompt.text = prompt;
+                    await setLoadingState();
+                    
+                    // Treat string to URL
+                    string encodedPrompt = HttpUtility.UrlEncode(prompt);
 
-                bool getLocal = true;
-                await getLlamaResponse(getLocal, prompt);
+                    // Sending promp request
+                    if (getFromLocalOllama){
+                        Ollama = new Ollama();
+                        Ollama.setTimeout(50);
+                        answer = await Ollama.sendRequest(prompt);
+                    } else {
+                        string url= $"http://localhost:5102/api/v1/sendMessage?prompt={encodedPrompt}"; // CHANGE THIS VAR TO YOUR END POINT API
+                        
+                        OllamaApi = new OllamaApi();
+                        OllamaApi.setTimeout(50);
+                        answer = await OllamaApi.sendRequest(prompt, url);
+                    }
+                    if (string.IsNullOrEmpty(answer)) {
+                        answer = "Error on API.";
+                    }
+                    
+                    // Preparing loaded state
+                    await setLoadingState(false);
 
-                await setLoadingState(false);
-
-                decimal time = Math.Round((decimal)(stopwatch.ElapsedMilliseconds / 1000), 0);
-                object response = new { index = responses.Count(), question = prompt, answer = answer, time = time };
-                
-                await appendInResponses(response);
-                StateHasChanged();
+                    // Rec proccess time and prepering response
+                    decimal time = Math.Round((decimal)(stopwatch.ElapsedMilliseconds / 1000), 0);
+                    object response = new { index = responses.Count(), question = prompt, answer = answer, time = time };
+                    
+                    // Set response
+                    await appendInResponses(response);
+                    StateHasChanged();
+                } else {
+                    await JSRuntime.InvokeVoidAsync("console.log", "No prompt sent");
+                }
             }
             catch (Exception ex)
             {
                 await setLoadingState(false);
-                await JSRuntime.InvokeVoidAsync("console.log", "Um erro ocorreu: "+ex.Message);
+                await JSRuntime.InvokeVoidAsync("console.log", "Error: "+ex.Message);
             }
         }
-        private async Task getLlamaResponse(bool getLocal, string prompt, string model = "llama3", bool stream = false)
-        {
-            try
-            {
-                if (prompt != "")
-                {
-                    // Assemble request
-                    string protocol = "http://";
-                    string domain = "localhost";
-                    string port = getLocal ? ":11434" : ":44358";
-                    string uri = getLocal ? "/api/generate" : $"/api/v1/sendMessage?prompt={prompt}";
-                    string url = protocol + domain + port + uri;
-                    request = new HttpRequestMessage(getLocal ? HttpMethod.Post : HttpMethod.Get, url);
-
-                    if (getLocal)
-                    {
-                        // Assemble content
-                        var json = JsonSerializer.Serialize(new{prompt,model,stream});
-                        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                        // Associates the content with the request
-                        request.Content = content;
-                    }
-
-                    // Set a timeout to request
-                    client = new HttpClient();
-                    client.Timeout = TimeSpan.FromSeconds(30);
-
-                    // Make the call to the endpoint and validate if it was successful
-                    var response = await client.SendAsync(request);
-                    if (response.StatusCode == HttpStatusCode.OK)
-                    { 
-                        // Extract the response content in Json format
-                        var responseBody = await response.Content.ReadAsStringAsync();
-
-                        if(getLocal)
-                        {
-                            // Extract Json in Object format
-                            var options = new JsonSerializerOptions
-                            {
-                                PropertyNameCaseInsensitive = true
-                            };
-                            var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
-                            answer = responseObject.response;
-                        } 
-                        else
-                        {
-                            // Access the "response" property and convert it to a string
-                            answer = JsonSerializer.Deserialize<String>(responseBody);
-                        }
-                    } else
-                    {
-                        answer = "Sorry, there is some problem in my mind. Lat's tray again.";
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                answer = "Sorry, there is some leg in my mind. Let's tray again.";
-                setLoadingState(false);
-            }
-        }
-
+        
         private async Task setLoadingState(bool loading = true)
         {
             if (loading)
@@ -178,15 +140,5 @@ namespace Prompt.Components.Pages
     public class Prompt
     {
         public string? text { get; set; } = "";
-    }
-    public class OllamaResponse
-    {
-        public string? model { get; set; }
-        public DateTime createdAt { get; set; }
-        public string response { get; set; }
-        public bool done { get; set; }
-        public string doneReason { get; set; }
-        public string done_Reason { get; set; }
-        public int[]? context { get; set; }
     }
 }

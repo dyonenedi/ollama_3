@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Components\Pages\Chat.razor.cs" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Components\Pages\Chat.razor" />
-  </ItemGroup>
-
+  
 </Project>

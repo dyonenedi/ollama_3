@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
+﻿using Llhama3_test.Class;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Llhama3_test.Controllers
 {
@@ -9,6 +7,7 @@ namespace Llhama3_test.Controllers
     [Route("api/v1/sendMessage")]
     public class sendMessageController : ControllerBase
     {
+        private Ollama Ollama;
         private string answer = "";
         private readonly HttpClient _httpClient;
 
@@ -24,51 +23,14 @@ namespace Llhama3_test.Controllers
 
             return answer;
         }
-        private async Task getLlamaResponse(string prompt, string model = "llama3", bool stream = false)
+        private async Task getLlamaResponse(string prompt)
         {
-            // Assemble Request
-            string protocol = "http://";
-            string domain = "localhost";
-            string port = ":11434";
-            string uri = "/api/generate";
-            string url = (protocol + domain + port + uri);
-            var request = new HttpRequestMessage(HttpMethod.Post, url);
-
-            // Assemble Post
-            var content = new StringContent(JsonSerializer.Serialize(new
-            {
-                prompt,
-                model,
-                stream
-            }), Encoding.UTF8, "application/json");
-
-            // Link request and content
-            request.Content = content;
-
-            // Validate end-point sync
-            var response = await _httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-
-            // Extract body 
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            };
-            var responseObject = JsonSerializer.Deserialize<OllamaResponse>(responseBody, options);
-
-            // Access string response to give back
-            answer = responseObject.response;
-        }
-
-        public class OllamaResponse
-        {
-            public string model { get; set; }
-            public DateTime createdAt { get; set; }
-            public string response { get; set; }
-            public bool done { get; set; }
-            public string doneReason { get; set; }
-            public int[] context { get; set; }
+            Ollama = new Ollama();
+            Ollama.setTimeout(50);
+            answer = await Ollama.sendRequest(prompt);
+            if (string.IsNullOrEmpty(answer)) {
+                answer = Ollama.getError();
+            }
         }
     }
 }

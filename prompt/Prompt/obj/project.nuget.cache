@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8qoyLyL+Zh0=",
+  "dgSpecHash": "ycaSYfaTrCE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dyon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

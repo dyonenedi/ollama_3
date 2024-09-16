@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\api.csproj": {}
+    "C:\\C#\\Llama_3.1_chatboot\\api\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\api.csproj": {
+    "C:\\C#\\Llama_3.1_chatboot\\api\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\api.csproj",
+        "projectUniqueName": "C:\\C#\\Llama_3.1_chatboot\\api\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\dyon.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dyon.souza\\source\\repos\\Lhama_3.1_chatboot\\api\\api\\obj\\",
+        "projectPath": "C:\\C#\\Llama_3.1_chatboot\\api\\api\\api.csproj",
+        "packagesPath": "C:\\Users\\Dyon\\.nuget\\packages\\",
+        "outputPath": "C:\\C#\\Llama_3.1_chatboot\\api\\api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dyon.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Dyon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -74,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
