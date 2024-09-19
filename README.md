@@ -1,7 +1,7 @@
 ## How to use it?
 <ol>
-  <li>Download and instal ollama 3: <a href="https://ollama.com/download" target="_blank">Llama 3 download</a></li>
-  <li>Open the prompt and place: <code>ollama run llama3</code></li>
+  <li>Download and instal ollama 3: <a href="https://ollama.com/download" target="_blank">Llama 3.1 download</a></li>
+  <li>Open the prompt and place: <code>ollama run llama3.1</code></li>
   <li>Clone this repository</li>
   <li>Chosse your way to use:</li>
   <ol>
