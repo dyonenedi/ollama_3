@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Llhama3_test.Controllers.sendMessageController",
+    "ContainingType": "ollama_3.Controllers.sendMessageController",
     "Method": "ask",
     "RelativePath": "api/v1/sendMessage",
     "HttpMethod": "GET",

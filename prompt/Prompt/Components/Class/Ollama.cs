@@ -84,7 +84,7 @@ namespace Prompt.Components.Class
 
     partial class OSetting {
         public string apiUrlName = "http://localhost:11434/api/generate";
-        public string model = "llama3.1";
+        public string model = "llama3.2";
         public bool stream = false;
         public int timeout = 30;
     }

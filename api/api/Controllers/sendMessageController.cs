@@ -1,7 +1,7 @@
-﻿using Llhama3_test.Class;
+﻿using ollama_3.Class;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Llhama3_test.Controllers
+namespace ollama_3.Controllers
 {
     [ApiController]
     [Route("api/v1/sendMessage")]

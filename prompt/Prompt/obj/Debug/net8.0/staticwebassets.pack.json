@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
+      "Id": "C:\\C#\\olhama_3\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
       "PackagePath": "staticwebassets\\Components\\Pages\\Question.razor.js"
     },
     {
-      "Id": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\app.css",
+      "Id": "C:\\C#\\olhama_3\\prompt\\Prompt\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {

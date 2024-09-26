@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj": {}
+    "C:\\C#\\olhama_3\\prompt\\Prompt\\Prompt.csproj": {}
   },
   "projects": {
-    "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj": {
+    "C:\\C#\\olhama_3\\prompt\\Prompt\\Prompt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj",
+        "projectUniqueName": "C:\\C#\\olhama_3\\prompt\\Prompt\\Prompt.csproj",
         "projectName": "Prompt",
-        "projectPath": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Prompt.csproj",
+        "projectPath": "C:\\C#\\olhama_3\\prompt\\Prompt\\Prompt.csproj",
         "packagesPath": "C:\\Users\\Dyon\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\obj\\",
+        "outputPath": "C:\\C#\\olhama_3\\prompt\\Prompt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dyon\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7wpCZkyKWiz8FmW/zhKCkRGGBgs5xWLLrclR3ytcYmI=",
+  "Hash": "m505jvt7lqme6oPcx6BY5Lu9GRqs6wHps88QkotMA/A=",
   "Source": "Prompt",
   "BasePath": "_content/Prompt",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Prompt\\wwwroot",
       "Source": "Prompt",
-      "ContentRoot": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\olhama_3\\prompt\\Prompt\\wwwroot\\",
       "BasePath": "_content/Prompt",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
+      "Identity": "C:\\C#\\olhama_3\\prompt\\Prompt\\Components\\Pages\\Question.razor.js",
       "SourceId": "Prompt",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\",
+      "ContentRoot": "C:\\C#\\olhama_3\\prompt\\Prompt\\",
       "BasePath": "_content/Prompt",
       "RelativePath": "Components/Pages/Question.razor.js",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "Components\\Pages\\Question.razor.js"
     },
     {
-      "Identity": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\app.css",
+      "Identity": "C:\\C#\\olhama_3\\prompt\\Prompt\\wwwroot\\app.css",
       "SourceId": "Prompt",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\Llama_3.1_chatboot\\prompt\\Prompt\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\olhama_3\\prompt\\Prompt\\wwwroot\\",
       "BasePath": "_content/Prompt",
       "RelativePath": "app.css",
       "AssetKind": "All",
